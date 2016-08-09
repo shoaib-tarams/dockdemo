@@ -1,9 +1,9 @@
 version: '2'
 
 services:
-  rest:
+  rest1:
     build: ./rest
-    container_name: rest
+    container_name: rest1
     image: appdynamics/sample-app-rest
     links:
       - db1
@@ -18,12 +18,12 @@ services:
     ports: 
       - "3306:3306"
 
-  web:
+  web1:
     build: ./web
-    container_name: web
+    container_name: web1
     image: appdynamics/sample-app-web
     links:
-      - rest
+      - rest1
       - db1
     ports:
       - "3000:3000"
