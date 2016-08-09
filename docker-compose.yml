@@ -6,12 +6,12 @@ services:
     container_name: rest
     image: appdynamics/sample-app-rest
     links:
-      - db
+      - db1
     ports: 
       - "8080:8080"
 
   db:
-    container_name: db
+    container_name: db1
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=singcontroller  
@@ -24,7 +24,7 @@ services:
     image: appdynamics/sample-app-web
     links:
       - rest
-      - db
+      - db1
     ports:
       - "3000:3000"
 
