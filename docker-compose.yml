@@ -2,7 +2,7 @@ version: '2'
 
 services:
   rest:
-    name: rest
+    container_name: rest
     image: 308254797299.dkr.ecr.us-west-2.amazonaws.com/sample-app-rest:workingV2
     links:
       - db
@@ -10,7 +10,7 @@ services:
       - "8080:8080"
 
   db:
-    name: db
+    container_name: db
     image: 308254797299.dkr.ecr.us-west-2.amazonaws.com/mysql:working
     environment:
       - MYSQL_ROOT_PASSWORD=singcontroller  
