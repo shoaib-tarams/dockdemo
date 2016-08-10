@@ -28,6 +28,9 @@ APPD_CONTROLLER=$1
 APPD_PORT=$2
 APPD_ACCOUNT_NAME=$3
 APPD_ACCESS_KEY=$4
+USER_NAME="test@test.com"
+PASSWORD="WjeFm8Qz3y"
+
 APPD_SSL="false"
 APPD_APP_NAME="SampleApp"
 APPD_TIER_NAME="RestServices"
@@ -43,14 +46,14 @@ checkSSL() {
 }
 
 downloadInstallers() {
-  echo "Please enter your AppDynamics Portal login to download Agents"
-  echo -n "Email ID/UserName: "
-  read USER_NAME
+  #echo "Please enter your AppDynamics Portal login to download Agents"
+  #echo -n "Email ID/UserName: "
+  #read USER_NAME
 
-  stty -echo
-  echo -n "Password: "
-  read PASSWORD
-  stty echo
+  #stty -echo
+  #echo -n "Password: "
+  #read PASSWORD
+  #stty echo
   echo
 
   mkdir -p ${APPD_TEMP_DIR}
