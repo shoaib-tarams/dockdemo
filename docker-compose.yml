@@ -2,8 +2,9 @@ version: '2'
 
 services:
   rest:
+    build: ./rest
     container_name: rest
-    image: 308254797299.dkr.ecr.us-west-2.amazonaws.com/sample-app-rest:workingV2
+    image: appdynamics/sample-app-rest
     links:
       - db
     ports: 
@@ -11,19 +12,18 @@ services:
 
   db:
     container_name: db
-    image: 308254797299.dkr.ecr.us-west-2.amazonaws.com/mysql:working
+    image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=singcontroller  
     ports: 
       - "3306:3306"
 
   web:
+    build: ./web
     container_name: web
-    image: 308254797299.dkr.ecr.us-west-2.amazonaws.com/sample-app-web:workingV2
+    image: appdynamics/sample-app-web
     links:
       - rest
       - db
     ports:
       - "3000:3000"
-
-
